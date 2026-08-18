@@ -291,7 +291,7 @@ function Nav({ page, setPage, menuOpen, setMenuOpen }) {
         <span>Overland CR</span>
       </button>
       <div className="nav-links">
-        {pageLinks.slice(0, 5).map(([id, label]) => <button className={page === id ? 'is-active' : ''} key={id} onClick={() => go(id)}>{label}</button>)}
+        {pageLinks.map(([id, label]) => <button className={page === id ? 'is-active' : ''} key={id} onClick={() => go(id)}>{label}</button>)}
       </div>
       <button className="menu-button" onClick={() => setMenuOpen((open) => !open)} aria-expanded={menuOpen} aria-label="Abrir menú">
         {menuOpen ? <X size={19} /> : <Menu size={19} />}
@@ -529,6 +529,4 @@ function App() {
 }
 
 createRoot(document.getElementById('root')).render(<App />);
-
-
 
